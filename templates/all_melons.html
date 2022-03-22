@@ -5,6 +5,10 @@
 
     <div id="melon-list" class="row">
       {% for melon in melon_list %}
+      <!-- melon is an instance of the class melons -->
+      <!-- #we are looping through the melon_list from shoppingsite.py
+      #the command on shoppingsite.py was: -->
+      <!-- #return render_template( "all_melons.html", melon_list=melon_list) -->
           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 melon-summary mt-3">
 
               <div class="card text-center bg-light">
@@ -12,7 +16,12 @@
                     <img class="card-img-top img-circle" src="{{ melon.image_url }}">
                 </a>
                 <div class="card-body">
+                    <!-- #notice how below we are using melon instance attributes
+                    #example: melon.melon_id and melon.price_str -->
                     <h5 class="card-title"><a href="/melon/{{ melon.melon_id }}">{{ melon.common_name }}</a></h5>
+                    <!-- #notice above that we are creating a link "<a href=''...''  -->
+                    <!-- #to a webpage using the instance attribute melon.melon_id
+                    #the word to click on is {{melon.common_name}} -->
                     <div class="price card-text">{{ melon.price_str() }}</div>
                     <a class="btn btn-primary" href="/melon/{{ melon.melon_id }}">Details</a>
                 </div>

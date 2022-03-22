@@ -9,6 +9,10 @@ It reads melon data in from a text file.
 
 class Melon:
     """An Ubermelon Melon type."""
+    #initiating the class Melon
+    #and using the ___init__() function to assign values
+    #example of values or class instances melon_id, melon_type
+    
 
     def __init__(
         self,
@@ -20,6 +24,7 @@ class Melon:
         color,
         seedless,
     ):
+    #these are melon attributes that we will use in the other files
         self.melon_id = melon_id
         self.melon_type = melon_type
         self.common_name = common_name
@@ -30,12 +35,17 @@ class Melon:
 
     def price_str(self):
         """Return price formatted as string $x.xx"""
+        #example of a class method
+        #it is bound to the class 'melons'
 
         return f"${self.price:.2f}"
 
     def __repr__(self):
         """Convenience method to show information about melon in console."""
-
+        #__repr__ returns the information in the format below
+        #into the console
+        #this makes it easier to read
+        #notice the formating below
         return (
             f"<Melon: {self.melon_id}, {self.common_name}, {self.price_str()}>"
         )
@@ -48,6 +58,9 @@ def read_melon_types_from_file(filepath):
     """
 
     melon_types = {}
+    #melon types is a blank dictionary
+    #the key is the melon_id
+    #
 
     with open(filepath) as file:
         for line in file:
@@ -80,6 +93,9 @@ def read_melon_types_from_file(filepath):
 
 
 def get_all():
+    #the get_all method returns all the melons instance attributes as a list
+    #see the example below
+    #notice the list has <..> showing melon instances
     """Return list of melons.
 
     If you call this function, you should get back a list like the one below.
